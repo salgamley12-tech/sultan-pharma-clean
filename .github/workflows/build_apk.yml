@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: .
           
       - uses: actions/setup-java@v3
         with:
@@ -24,12 +22,14 @@ jobs:
           
       - name: Install dependencies
         run: flutter pub get
+        working-directory: sultan-pharma-clean
         
       - name: Build APK
         run: flutter build apk --release
+        working-directory: sultan-pharma-clean
         
       - uses: actions/upload-artifact@v4
         with:
           name: sultan-pharma-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: sultan-pharma-clean/build/app/outputs/flutter-apk/app-release.apk
           
