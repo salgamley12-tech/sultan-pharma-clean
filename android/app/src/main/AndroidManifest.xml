@@ -4,7 +4,7 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         
-        <!-- إضافة ميزة الـ Flutter Embedding V2 لحل المشكلة نهائياً -->
+        <!-- هذا السطر ينهي مشكلة v1 embedding فوراً -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
